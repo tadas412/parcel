@@ -22,7 +22,7 @@ class Logger {
 
   write(message, persistent = false) {
     if (!persistent) {
-      if (message) {
+      if (typeof message === 'string') {
         this.lines += message.split('\n').length;
       }
     }
