@@ -22,7 +22,9 @@ class Logger {
 
   write(message, persistent = false) {
     if (!persistent) {
-      this.lines += message.split('\n').length;
+      if (message) {
+        this.lines += message.split('\n').length;
+      }
     }
 
     this._log(message);
